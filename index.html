@@ -16,7 +16,7 @@
 html,body{height:100%;margin:0}
 body{background:var(--ink);color:var(--paper);font-family:"Silkscreen",ui-monospace,Menlo,monospace;display:flex;justify-content:center;align-items:center;
  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);touch-action:manipulation;user-select:none;-webkit-user-select:none;overflow:hidden}
-#app{display:flex;flex-direction:column;gap:10px;width:min(100vw,calc((100dvh - 190px) * .72 + 120px));padding:10px}
+#app{--chrome:175px;display:flex;flex-direction:column;gap:10px;width:min(100vw,calc((100dvh - var(--chrome)) / 2 + 126px));padding:10px}
 header{display:flex;justify-content:space-between;align-items:baseline}
 h1{font-size:22px;margin:0;letter-spacing:1px}
 #pause{background:none;border:2px solid var(--grid);color:var(--dim);font:inherit;font-size:12px;padding:6px 10px;border-radius:4px}
@@ -38,7 +38,8 @@ aside{width:96px;display:flex;flex-direction:column;gap:10px}
 #pad button{background:var(--grid);color:var(--paper);border:0;border-bottom:4px solid #151936;border-radius:6px;font:inherit;font-size:20px;height:54px}
 #pad button:active{transform:translateY(3px);border-bottom-width:1px;background:#3a4075}
 #pad .wide{grid-column:span 1}
-@media (hover:hover) and (pointer:fine){#pad{display:none}.keys{display:block!important}}
+@media (hover:hover) and (pointer:fine){#pad{display:none}.keys{display:block!important}#app{--chrome:125px}}
+@media (max-height:680px){aside{width:80px;gap:6px}.box{padding:4px 6px}.box strong{font-size:14px}}
 .keys{display:none;font-size:10px;color:var(--dim);line-height:1.7}
 </style>
 </head>
